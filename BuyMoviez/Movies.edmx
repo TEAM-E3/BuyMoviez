@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Movies.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MoviesStoreContainer">
+    <EntitySet Name="Movies" EntityType="Movies.Store.Movies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Actors" EntityType="Movies.Store.Actors" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="MovieActors" Association="Movies.Store.MovieActors">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="Actors" EntitySet="Actors" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Movies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Release" Type="int" Nullable="false" />
+    <Property Name="Director" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Producer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Genre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sales" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Actors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Actor1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Actor2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Actor3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MovieId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="MovieActors">
+    <End Role="Movie" Type="Movies.Store.Movies" Multiplicity="1" />
+    <End Role="Actors" Type="Movies.Store.Actors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Actors">
+        <PropertyRef Name="MovieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Movies" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="MoviesContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Movies" EntityType="Movies.Movie" />
+          <EntitySet Name="Actors" EntityType="Movies.Actors" />
+          <AssociationSet Name="MovieActors" Association="Movies.MovieActors">
+            <End Role="Movie" EntitySet="Movies" />
+            <End Role="Actors" EntitySet="Actors" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Movie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Release" Type="Int32" Nullable="false" />
+          <Property Name="Director" Type="String" Nullable="false" />
+          <Property Name="Producer" Type="String" Nullable="false" />
+          <Property Name="Genre" Type="String" Nullable="false" />
+          <Property Name="Sales" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Actors" Relationship="Movies.MovieActors" FromRole="Movie" ToRole="Actors" />
+        </EntityType>
+        <EntityType Name="Actors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Actor1" Type="String" Nullable="false" />
+          <Property Name="Actor2" Type="String" Nullable="false" />
+          <Property Name="Actor3" Type="String" Nullable="false" />
+          <NavigationProperty Name="Movie" Relationship="Movies.MovieActors" FromRole="Actors" ToRole="Movie" />
+          <Property Name="MovieId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="MovieActors">
+          <End Type="Movies.Movie" Role="Movie" Multiplicity="1" />
+          <End Type="Movies.Actors" Role="Actors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Actors">
+              <PropertyRef Name="MovieId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MoviesStoreContainer" CdmEntityContainer="MoviesContainer">
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="IsTypeOf(Movies.Movie)">
+        <MappingFragment StoreEntitySet="Movies">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Release" ColumnName="Release" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Producer" ColumnName="Producer" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="Sales" ColumnName="Sales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Actors">
+      <EntityTypeMapping TypeName="IsTypeOf(Movies.Actors)">
+        <MappingFragment StoreEntitySet="Actors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Actor1" ColumnName="Actor1" />
+          <ScalarProperty Name="Actor2" ColumnName="Actor2" />
+          <ScalarProperty Name="Actor3" ColumnName="Actor3" />
+          <ScalarProperty Name="MovieId" ColumnName="MovieId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

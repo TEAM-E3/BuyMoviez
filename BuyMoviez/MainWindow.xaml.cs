@@ -17,10 +17,7 @@ using System.Globalization;
 
 namespace BuyMoviez
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    /// 
+
 
     public partial class MainWindow : Window
     {

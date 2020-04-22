@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace BuyMoviez
 {
 
-    public enum MovieType { Horror, Comedy, SciFi, Action, Documentaries}
-   public class Movie
+    public enum MovieType { Horror, Comedy, SciFi, Action, Documentaries }
+    public class Movie
     {
         public string Name { get; set; }
 
@@ -27,7 +27,9 @@ namespace BuyMoviez
         public MovieType MovieGenre { get; set; }
 
 
-        public Movie(string name, DateTime movieRelease, string director, string description, decimal price, MovieType movieGenre  )
+
+
+        public Movie(string name, DateTime movieRelease, string director, string description, decimal price, MovieType movieGenre)
         {
             Name = name;
             MovieRelease = movieRelease;
@@ -35,7 +37,7 @@ namespace BuyMoviez
             Director = director;
             Description = description;
             MovieGenre = movieGenre;
-                
+
         }
 
         public Movie()

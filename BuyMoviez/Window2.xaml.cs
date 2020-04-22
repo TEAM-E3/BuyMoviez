@@ -19,6 +19,7 @@ namespace BuyMoviez
     /// </summary>
     public partial class Window2 : Window
     {
+        MoviesContainer db = new MoviesContainer();
         public Window2()
         {
             InitializeComponent();
@@ -32,6 +33,14 @@ namespace BuyMoviez
             MainWindow sW = new MainWindow();
             sW.Show();
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var query = from b in db.Movies
+                        select b;
+
+            lbxMovies.ItemsSource = query.ToList();
         }
     }
 }

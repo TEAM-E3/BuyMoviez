@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BuyMoviez"
         mc:Ignorable="d"
-        Title="Window2" Height="450" Width="800">
+        Title="Window2" Height="487.244" Width="913.222"
+        Loaded="Window_Loaded">
     <Grid>
-        
+
         <Image Source="background2.png" Stretch="Fill"/>
-        <Button Content="Previous Page" HorizontalAlignment="Left" Margin="478,292,0,0" VerticalAlignment="Top" Width="258" Height="67" Click="Button_Click"/>
-        <Image Margin="10,0,484,323" Source="Image1.png" Stretch="Fill"/>
+        <Button Content="Previous Page" HorizontalAlignment="Left" Margin="624,366,0,0" VerticalAlignment="Top" Width="258" Height="67" Click="Button_Click"/>
+        <Image Margin="10,0,558,369" Source="Image1.png" Stretch="Fill"/>
+        <ListBox x:Name="lbxMovies" HorizontalAlignment="Left" Height="228" Margin="31,92,0,0" VerticalAlignment="Top" Width="222"/>
+        <ListBox x:Name="lbxActors" HorizontalAlignment="Left" Height="155" Margin="394,205,0,0" VerticalAlignment="Top" Width="209"/>
+        <TextBlock x:Name="tblkActorInfo" HorizontalAlignment="Left" Margin="394,92,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="64" Width="157"/>
+        <Image x:Name="imgActor" HorizontalAlignment="Left" Height="155" Margin="624,186,0,0" VerticalAlignment="Top" Width="258"/>
+
 
     </Grid>
 </Window>
