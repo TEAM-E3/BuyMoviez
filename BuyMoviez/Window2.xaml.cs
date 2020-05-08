@@ -35,12 +35,45 @@ namespace BuyMoviez
             this.Close();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void D1Button_Click(object sender, RoutedEventArgs e)
         {
-            var query = from b in db.Movies
-                        select b;
+            var query = from p in db.Actors
+                        where p.MovieId < 5
+                        select new
+                        {
+                            Movie = p.MovieId
+                        };
 
-            lbxMovies.ItemsSource = query.ToList();
+            D1DvgDisplay.ItemsSource = query.ToList();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        { }
+
+        private void D2Button_Click(object sender, RoutedEventArgs e)
+        {
+            var query = from c in db.Movies
+                        where c.Name == "Pineapple Express"
+                        orderby c.MovieGenre
+
+                        select new
+                        {
+                            c.MovieGenre,
+                            c.Price
+                        };
+
+            D2DvgDisplay.ItemsSource = query.ToList().Distinct();
+
+
+        }
+
+        private void D3Button_Click(object sender, RoutedEventArgs e)
+        {
+            var query = from o in db.Movies
+                        select o.Price;
+
+            D3DvgDisplay.ItemsSource = query.ToList();
+
         }
     }
 }

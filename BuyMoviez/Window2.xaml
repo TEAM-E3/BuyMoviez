@@ -12,10 +12,49 @@
         <Image Source="background2.png" Stretch="Fill"/>
         <Button Content="Previous Page" HorizontalAlignment="Left" Margin="624,366,0,0" VerticalAlignment="Top" Width="258" Height="67" Click="Button_Click"/>
         <Image Margin="10,0,558,369" Source="Image1.png" Stretch="Fill"/>
-        <ListBox x:Name="lbxMovies" HorizontalAlignment="Left" Height="228" Margin="31,92,0,0" VerticalAlignment="Top" Width="222"/>
-        <ListBox x:Name="lbxActors" HorizontalAlignment="Left" Height="155" Margin="394,205,0,0" VerticalAlignment="Top" Width="209"/>
-        <TextBlock x:Name="tblkActorInfo" HorizontalAlignment="Left" Margin="394,92,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="64" Width="157"/>
-        <Image x:Name="imgActor" HorizontalAlignment="Left" Height="155" Margin="624,186,0,0" VerticalAlignment="Top" Width="258"/>
+
+        <TabControl TabStripPlacement="Top" Margin="0,120,0,95">
+            <TabItem Header="Actor" Width="200">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="8*"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Content="Get Data" Width="100" Height="30" Name="D1Button" Click="D1Button_Click" />
+                    <DataGrid Grid.Row="1" Name="D1DvgDisplay" Margin="0,0,0,90"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Movie" Width="200">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="8*"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Content="Get Data" Width="100" Height="30" Name="D2Button" Click="D2Button_Click" />
+                    <DataGrid Grid.Row="1" Name="D2DvgDisplay" Margin="0,0,0,90"/>
+
+                </Grid>
+                
+                
+            </TabItem>
+
+            <TabItem Header="Price" Width="200">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="8*"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Content="Get Data" Width="100" Height="30" Name="D3Button" Click="D3Button_Click" />
+                    <DataGrid Grid.Row="1" Name="D3DvgDisplay" Margin="0,0,0,90"/>
+
+                </Grid>
+
+
+            </TabItem>
+
+        </TabControl>
 
 
     </Grid>

@@ -51,7 +51,7 @@
         <RadioButton x:Name="radioSciFi" Content="SciFi&#xD;&#xA;" HorizontalAlignment="Left" Margin="399,152,0,0" VerticalAlignment="Top" Height="31" Width="104" FontSize="16" Click="radioAll_Checked" />
         <TextBlock x:Name="txtblockDesc" HorizontalAlignment="Left" Margin="652,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="231" Width="448" FontSize="16"/>
         <Label Content="Movie Description - " HorizontalAlignment="Left" Margin="652,221,0,0" VerticalAlignment="Top" Width="173" FontSize="16"/>
-        <Button x:Name="btnNextWindow" Content="Choose Favourite Actor" HorizontalAlignment="Left" Margin="1148,45,0,0" VerticalAlignment="Top" Width="214" Height="51" Click="btnNextWindow_Click"/>
+        <Button x:Name="btnNextWindow" Content="Check Databases" HorizontalAlignment="Left" Margin="1148,45,0,0" VerticalAlignment="Top" Width="214" Height="51" Click="btnNextWindow_Click"/>
         <TextBlock x:Name="txtblkTotalPrice" HorizontalAlignment="Left" Margin="868,553,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="196" FontSize="16"/>
         <Label Content="Total Price - " HorizontalAlignment="Left" Margin="652,553,0,0" VerticalAlignment="Top" Width="173" FontSize="16"/>
         <Image Name="imgMovie"  HorizontalAlignment="Left" Height="231" Margin="1148,273,0,0" VerticalAlignment="Top" Width="214"/>

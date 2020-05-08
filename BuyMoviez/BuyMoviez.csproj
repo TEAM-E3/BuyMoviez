@@ -147,6 +147,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Movies.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Movies.edmx.diagram">
       <DependentUpon>Movies.edmx</DependentUpon>
     </None>

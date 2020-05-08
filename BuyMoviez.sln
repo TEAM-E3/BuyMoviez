@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyMoviez", "BuyMoviez\BuyMoviez.csproj", "{0ECA6DCE-93DF-4B3C-8CEC-360C1D56BED9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{1D3EC0CC-42CC-4BA0-8513-14C4DA4CBEA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0ECA6DCE-93DF-4B3C-8CEC-360C1D56BED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ECA6DCE-93DF-4B3C-8CEC-360C1D56BED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ECA6DCE-93DF-4B3C-8CEC-360C1D56BED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D3EC0CC-42CC-4BA0-8513-14C4DA4CBEA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D3EC0CC-42CC-4BA0-8513-14C4DA4CBEA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D3EC0CC-42CC-4BA0-8513-14C4DA4CBEA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D3EC0CC-42CC-4BA0-8513-14C4DA4CBEA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
